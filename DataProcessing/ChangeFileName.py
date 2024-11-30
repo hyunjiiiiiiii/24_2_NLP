@@ -1,7 +1,7 @@
 import os
 
 # JSON 파일이 있는 폴더 경로
-source_folder = "C:/Users/CBNU/Desktop/이현지/24_2_NLP/Data/A_Data/Training/TL_02.실외"
+source_folder = "C:/Users/CBNU/Desktop/이현지/24_2_NLP/Data/A_Data/Validation/VL_02.실외"
 
 # 파일 이름을 1부터 순차적으로 변경
 def rename_files_in_folder(folder_path):

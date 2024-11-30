@@ -3,8 +3,8 @@ import json
 import pandas as pd
 
 # 변환할 JSON 파일이 있는 폴더
-source_folder = "C:/Users/CBNU/Desktop/이현지/24_2_NLP/Data/A_Data/Training/TL_02.실외"
-output_csv = "emotion_dataset_02.csv"
+source_folder = "C:/Users/CBNU/Desktop/이현지/24_2_NLP/Data/A_Data/Validation/VL_02.실외"
+output_csv = "emotion_vdataset_02.csv"
 
 # 데이터 변환
 def convert_json_to_csv(folder_path, output_file):
