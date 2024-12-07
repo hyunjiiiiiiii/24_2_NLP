@@ -8,9 +8,9 @@ import pandas as pd
 from transformers import AutoTokenizer
 
 # 데이터 경로
-train_data_path = "/Users/hyunji/Desktop/work/24_2_NLP/Data/A_Data/train_data.csv"
-# val_data_path = "/Users/hyunji/Desktop/work/24_2_NLP/Data/A_Data/val_data.csv"
-# test_data_path = "/Users/hyunji/Desktop/work/24_2_NLP/Data/A_Data/test_data.csv"
+train_data_path = "C:/Users/CBNU/Desktop/이현지/24_2_NLP/Data/A_Data/train_data.csv"
+# val_data_path = "C:/Users/CBNU/Desktop/이현지/24_2_NLP/Data/A_Data/val_data.csv"
+# test_data_path = "C:/Users/CBNU/Desktop/이현지/24_2_NLP/Data/A_Data/test_data.csv"
 
 # 데이터 로드
 train_data = pd.read_csv(train_data_path)
@@ -42,8 +42,8 @@ train_labels = torch.tensor(train_data["label"].tolist(), dtype=torch.long)
 # test_labels = torch.tensor(test_data["label"].tolist(), dtype=torch.long)
 
 # TensorDataset 생성 후 저장
-torch.save((train_encodings, train_labels), "/Users/hyunji/Desktop/work/24_2_NLP/Data/A_Data/train_data.pt")
-# torch.save((val_encodings, val_labels), "/Users/hyunji/Desktop/work/24_2_NLP/Data/A_Data/val_data.pt")
-# torch.save((test_encodings, test_labels), "/Users/hyunji/Desktop/work/24_2_NLP/Data/A_Data/test_data.pt")
+torch.save((train_encodings, train_labels), "C:/Users/CBNU/Desktop/이현지/24_2_NLP/Data/A_Data/train_data.csv")
+# torch.save((val_encodings, val_labels), "C:/Users/CBNU/Desktop/이현지/24_2_NLP/Data/A_Data/val_data.pt")
+# torch.save((test_encodings, test_labels), "C:/Users/CBNU/Desktop/이현지/24_2_NLP/Data/A_Data/test_data.pt")
 
 print("Tokenized data saved")
