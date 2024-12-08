@@ -1,13 +1,22 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
-# KoBERT 모델 및 토크나이저 로드
-MODEL_NAME = "monologg/kobert"
-tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, trust_remote_code=True)
-model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME, trust_remote_code=True)
+# 학습 완료된 모델 경로
+MODEL_PATH = "./Data/A_Data/kobert-part-1"  # 실제 모델 폴더 경로로 수정
 
-# GPU 설정
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# 모델 및 토크나이저 로드
+tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
+model = AutoModelForSequenceClassification.from_pretrained(MODEL_PATH)
+
+# MPS 또는 CPU 설정
+if torch.backends.mps.is_available():
+    device = torch.device("mps")
+    print("Using device: MPS (Apple Silicon GPU)")
+else:
+    device = torch.device("cpu")
+    print("Using device: CPU (MPS not available)")
+
+# 모델을 적절한 장치로 이동
 model = model.to(device)
 
 # 텍스트 데이터 읽기 함수
@@ -82,7 +91,7 @@ def check_and_regenerate(texts):
 def regenerate_texts():
     print("Regenerating texts...")
     # ChatGPT API 또는 다른 텍스트 생성 시스템 연동
-    regenerated = ["새로운 동화 텍스트입니다. 긍정적인 내용이 많습니다!"]
+    regenerated = ["새로운 동화 텍스트입니다."]
     print(f"Generated texts: {regenerated}")
 
 # 실행
